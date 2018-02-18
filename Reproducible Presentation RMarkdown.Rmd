@@ -1,0 +1,42 @@
+---
+title: "Reproducible Presentation"
+author: "Balaji K"
+date: "19 February 2018"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
+```
+
+## 2. Overview
+
+- The Assignment is to create a reproducible presentation using R Markdown. This is a webpage presentation demonstrating a basic but interactive plot created with 'plotly' package.
+- The plot is a basic scatter plot that has dates along the X-axis and stock prices along the Y-axis.
+- 'plotly' based interactive plot provides several exploration options to the viewer, for eg. to zoom in/out, focus on a specific plot area, hover over to get coordinates etc.
+
+## 3. Approach
+
+- Created a dataframe of the Stock's prices and the value Dates.
+- StockPrice was generated randomly using rnorm function.
+- ValueDate was generated sequentially, varying from current date by a day, for 180 days.
+- 180 observations of 2 variables representing 6 month's data was thus cooked up.
+
+## 4. R code & Output
+
+```{R}
+library(plotly)
+set.seed(seed = 1)
+mytoday <- Sys.Date()
+mydata <- data.frame(shareValue = rnorm(n = 180, mean = 500, sd = 20),
+    valueDate = seq.Date(from = mytoday, length.out = 180, by = 1))
+summary(mydata)
+```
+
+## 5. Plot with plotly
+
+```{R}
+plot_ly(mydata, y = ~shareValue, x = ~valueDate, 
+        type = "scatter", mode = "markers")
+```
+
