@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "---\ntitle: \"Webpage presentation of plotly\"\nauthor: \"Balaji K\"\ndate: \"18 February 2018\"\noutput: html_document\n---\n\n```{r setup, include=FALSE}\nknitr::opts_chunk$set(echo = TRUE, warning = FALSE)\n```\nThis is a webpage presentation demonstrating plots using Plotly.  European Stock Markets data\nfrom the \"datasets\" package is loaded first.  \n\n\n```{R}\nlibrary(plotly)\nset.seed(seed = 1)\nmytoday <- Sys.Date()\nmydata <- data.frame(shareValue = rnorm(n = 180, mean = 500, sd = 20),\n                     valueDate = seq.Date(from = mytoday, length.out = 180, by = 1))\nsummary(mydata)\n```\n\nplotly is used to depict the randomly simulated stockprices for the next 6 months from today. \n\n```{R}\n#png(\"p.png\", width=480, height=480)\nplot_ly(mydata, y = ~shareValue, x = ~valueDate, type = \"scatter\", mode = \"markers\")\n```\n",
+    "created" : 1518956537946.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "524050197",
+    "id" : "F7120889",
+    "lastKnownWriteTime" : 1518968673,
+    "last_content_update" : 1518968673194,
+    "path" : "~/R/03. R Projects/Coursera projects/Developing Data Products/Wk3Assignment/WebpagePresentationPlotly.Rmd",
+    "project_path" : "WebpagePresentationPlotly.Rmd",
+    "properties" : {
+        "last_setup_crc32" : "D512182F363be854",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}
