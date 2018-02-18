@@ -5,4 +5,5 @@ Key notes -
 1. Created a dataframe of 180 observations and 2 variables representing 6 month's data. The variables are StockPrice and ValueDate.
 2. ValueDate was generated sequentially from current date varying by a day, for 180 days.
 3. StockPrice was generated randomly.
-Using plotly, a scatter plot of this dataframe was generated and has been published to github.
+Using plotly, a scatter plot of this dataframe was generated and has been published to Rpubs and the URL is provided below.
+https://rpubs.com/bkrishna2006/Reproducible_Presentation_RMarkdown
